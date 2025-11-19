@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Latihan 2 - Highlight Paragraf PTIK FKIP UNS</title>
+    <style>
+        body {
+            font-family: 'Times New Roman', Times, serif;
+            margin: 40px;
+            background-color: #f5f5f5;
+        }
+        h1 {
+            font-weight: bold;
+        }
+        p {
+            text-align: justify;
+            line-height: 1.6;
+        }
+        button {
+            background-color: #ddd;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #bbb;
+        }
+        .highlight {
+            color: red;
+            background-color: yellow;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h1>PTIK FKIP UNS</h1>
+    <p id="paragraf">
+        The <span class="highlight-target">Faculty of Teacher Training and Education, Sebelas Maret University, Surakarta</span> 
+        is an <span class="highlight-target">Educational Personnel Education Institution (LPTK)</span> which has 24 study programs in 6 majors. 
+        Each study program has its own characteristics in producing 
+        <span class="highlight-target">superior, strong and intelligent educational staff.</span><br><br>
+
+        The <span class="highlight-target">Informatics and Computer Technology Education (PTIK)</span> study program is planned to take shelter 
+        in the management of the <span class="highlight-target">Engineering and Vocational Education (PTK)</span> department. 
+        This placement revises our previous statement, where the PTIK study program is under the P.MIPA department. 
+        PTIK is a study program that will produce graduates who are 
+        <span class="highlight-target">prioritized to teach in vocational/vocational programs.</span> 
+        So, it would be better if PTIK was under the PTK department which oversees vocational programs such as 
+        <span class="highlight-target">Building Engineering Education</span>, and 
+        <span class="highlight-target">Mechanical Engineering Education.</span> 
+        To meet the needs of lecturers in the field of information technology that cannot be met by the PTK department, 
+        PTIK will conduct <span class="highlight-target">resource sharing with the mathematics study program.</span>
+    </p>
+
+    <button onclick="toggleHighlight()">Highlight Paragraf</button>
+
+    <script>
+        function toggleHighlight() {
+            var elements = document.querySelectorAll('.highlight-target');
+            elements.forEach(el => el.classList.toggle('highlight'));
+        }
+    </script>
+</body>
+</html>

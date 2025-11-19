@@ -1,0 +1,157 @@
+<html>
+    <head>
+        <title>Ringkasan Materi Week 2 -- CSS</title>
+        <style id="internal-css">
+            #for-internal{ 
+                color: red;
+                font-size: 18px;
+            }
+        </style>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <h1>INI ADALAH RANGKUMAN TANPA CSS</h1>
+        <h1>Cara Kerja CSS</h1>
+        <p>CSS (Cascading Style Sheets) adalah bahasa yang digunakan untuk mengatur tampilan dan tata letak halaman web. 
+            CSS bekerja dengan cara menghubungkan aturan gaya (style rules) ke elemen-elemen HTML pada halaman web.</p>
+        <h2>Aturan Gaya CSS</h2>
+        <p>Aturan gaya CSS terdiri dari dua bagian utama: selektor (selector) dan deklarasi (declaration). <br>
+            Selektor digunakan untuk memilih elemen HTML yang akan diberi gaya, sedangkan deklarasi berisi
+             properti (property) dan nilai (value) yang menentukan bagaimana elemen tersebut akan ditampilkan.</p>
+        <h1>Jenis - jenis Selector</h3>
+        <div>
+            <ul>
+                <li>Selector Tag: Memilih elemen berdasarkan nama tag HTML (misalnya, p, h1, div).</li>
+                <li>Selector Class: Memilih elemen berdasarkan kelas yang ditentukan dalam atribut class (misalnya, .p1).</li>
+                <li>Selector ID: Memilih elemen berdasarkan ID yang ditentukan dalam atribut id (misalnya, #div1).</li>
+            </ul>
+        </div>
+        <h2>Contoh Penggunaan CSS</h2>
+        <p>Berikut adalah contoh penggunaan Selector CSS:</p> 
+        <pre>
+            p {
+                color: blue; /* Selector Tag */
+                font-size: 16px;
+            }
+            .p1 {
+                color: red; /* Selector Class */
+                font-weight: bold;
+            }
+            #div1 {
+                background-color: lightgray; /* Selector ID */
+                padding: 10px;
+            }
+        </pre>
+        <p>Dalam contoh di atas, aturan gaya pertama akan mengubah warna teks dan ukuran font untuk semua elemen &lt;p&gt; di halaman web. 
+            Aturan gaya kedua akan mengubah warna teks dan membuat teks menjadi tebal untuk elemen dengan kelas "p1". 
+            Aturan gaya ketiga akan mengatur latar belakang dan padding untuk elemen dengan ID "div1".</p>
+        <h2>Perbedaan ID dan Class Pada Selector</h2>
+        <p>Perbedaan utama antara selector ID dan selector Class adalah bahwa ID harus unik dalam sebuah halaman web, 
+            artinya hanya boleh ada satu elemen dengan ID tertentu. Sedangkan Class dapat digunakan pada beberapa elemen yang berbeda. 
+            Oleh karena itu, selector ID biasanya digunakan untuk elemen yang memiliki peran khusus atau unik dalam halaman web, 
+            sedangkan selector Class digunakan untuk mengelompokkan elemen-elemen yang memiliki gaya yang sama.</p>
+        <h1>Pewarisan pada CSS</h1>
+        <p>Pewarisan (inheritance) adalah konsep di mana properti CSS yang diterapkan pada elemen induk (parent element) 
+            dapat diwariskan oleh elemen anak (child element) di dalamnya. 
+            Ini memungkinkan elemen-elemen anak untuk mewarisi gaya dari elemen induk tanpa perlu mendefinisikan ulang properti tersebut.</p>
+        <h2>Contoh Pewarisan</h2>
+        <p>Misalnya, jika kita memiliki aturan gaya berikut:</p>
+        <pre>
+            body {
+                font-family: Arial, sans-serif;
+                color: black;
+            }
+            p {
+                font-size: 16px;
+            }
+        </pre>
+        <p>Dalam contoh di atas, elemen &lt;body&gt; memiliki properti font-family dan color yang akan diwariskan oleh semua elemen di dalamnya, 
+            termasuk elemen &lt;p&gt;. Oleh karena itu, semua teks dalam elemen &lt;p&gt; akan menggunakan font Arial dan berwarna hitam, 
+            kecuali jika ada aturan gaya lain yang secara eksplisit mengubah properti tersebut pada elemen &lt;p&gt;.</p>
+        <h1>INI ADALAH PENERAPAN CSSNYA</h1>
+        <strong>CONTOH LATIHAN MATERI</strong>
+        <h1>Penerapan nya</h1>
+        <style> 
+        body{ 
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background: #f0f0f0;
+        }
+        .p1{ /*selector class */
+            color: blue;
+            font-size: 18px;
+            text-align: justify;
+            text-indent: 30px;
+            line-height: 1.6;
+        }
+        #list1{ /*selector id */
+            list-style-type: square;
+            background: #90e07e;
+            padding: 10px;
+            border-radius: 15px;
+        }
+        </style>
+        <!-- selector dengan class -->
+        <p class="p1"> 
+            CSS (Cascading Style Sheets) adalah bahasa yang digunakan untuk mengatur tampilan dan tata letak halaman web. 
+            Dengan CSS, kita dapat mengubah warna, ukuran, font, dan banyak aspek visual lainnya dari elemen HTML.</p>
+        <!-- selector dengan id -->
+        <h2>Contoh List</h2>
+        <ul id="list1">
+            <li>Selector Tag: Memilih elemen berdasarkan nama tag HTML (misalnya, p, h1, div).</li>
+            <li>Selector Class: Memilih elemen berdasarkan kelas yang ditentukan dalam atribut class (misalnya, .p1).</li>
+            <li>Selector ID: Memilih elemen berdasarkan ID yang ditentukan dalam atribut id (misalnya, #div1).</li>
+        </ul>
+        <div id="div1">
+            <p>Ini adalah paragraf yang mewarisi css dari div saja dan ada styling sendiri</p>
+            <p id="p1">
+                Paragraf ini memiliki style khusus yang berbeda dari paragraf di atas(memmiliki styling dari div dan styling sendiri).
+            </p>
+        </div>
+        <style>
+            #div1{ /* selector parent yang membuat Tag P akan mendapatkan style font-family Courier New */
+                font-family: 'Courier New', Courier, monospace;
+                background: #ecfa91;
+                padding: 10px;
+            }
+            #p1{ /* selector id */
+                color: green;
+                font-size: 15px;
+                text-align: left;
+                font-weight: bold;
+            }
+            /* mengapa tidak ada style untuk tag p? karena tag p akan mewarisi style dari parentnya yaitu div1 */
+        </style>
+        <h1>Penempatan CSS</h1>
+        <p>Ada tiga cara utama untuk menambahkan CSS ke dalam dokumen HTML:</p>
+        <ol type="1">
+            <!-- contoh inline css -->
+            <li style="color: burlywood; font-size: 18;"> 
+                Inline CSS: Menambahkan gaya langsung pada elemen HTML menggunakan atribut style. Contoh: 
+                <pre>&lt;p style="color: blue; font-size: 16px;"&gt;Ini adalah paragraf dengan inline CSS.&lt;/p&gt;</pre>
+            </li>
+            <!-- contoh internal-css -->
+            <li id="for-internal">Internal CSS: Menambahkan gaya di dalam elemen &lt;style&gt; 
+                di dalam bagian &lt;head&gt; dokumen HTML. Contoh:
+                <pre>
+                    &lt;head&gt;
+                        &lt;style&gt;
+                            p {
+                                color: red;
+                                font-size: 18px;
+                            }  
+                        &lt;/style&gt;
+                    &lt;/head&gt;
+                </pre>
+            </li>
+            <!-- contoh external-css -->
+            <li id="external-css">External CSS: Menghubungkan file CSS eksternal ke dokumen HTML menggunakan elemen &lt;link&gt;. Contoh:
+                <pre>
+                    &lt;head&gt;
+                        &lt;link rel="stylesheet" href="styles.css"&gt;
+                    &lt;/head&gt;
+                </pre>
+                Di mana "styles.css" adalah file CSS eksternal yang berisi aturan gaya.
+        </ol>
+    </body>
+</html>

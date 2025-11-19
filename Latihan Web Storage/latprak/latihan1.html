@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Storage</title>
+</head>
+<body>
+    <center>
+        <h1>Selamat Datang, Member!</h1>
+        <button onclick="gantiNama(event)">Masukkan Nama</button>
+        <!-- nambah tombol hapus mama member -->
+        <button onclick="hapusNama(event)">Hapus Nama</button>
+    </center>
+    <script>
+        const namaMember = document.querySelector('h1');
+        const namaTerSimpan = localStorage.getItem('nama');
+        if (namaTerSimpan) {
+            namaMember.innerHTML = 'Hi, ' + namaTerSimpan + '!';
+        }
+        function gantiNama(e) {
+            let nama = prompt("Masukkan nama Anda:");
+            if (nama && nama.trim() !== "") {
+                localStorage.setItem('nama', nama);
+                namaMember.innerHTML = 'Hi, ' + nama + '!';
+            } else {
+                alert("Nama tidak boleh kosong!");
+            }
+            e.preventDefault();
+        }
+        // Menambahkan fungsi hapus nama member
+        function hapusNama(e) {
+            localStorage.removeItem('nama');
+            namaMember.innerHTML = 'Selamat Datang, Member!';
+            e.preventDefault();
+        }
+    </script>
+</body>
+</html>

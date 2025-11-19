@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <title>CSS Lanjut</title>
+  <style>
+    body{
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      margin:0; padding:0;
+      background:#f9f9f9;
+      padding-top: 50px; 
+    } 
+    section{
+      background:#fff;
+      margin:20px auto;
+      padding:20px;
+      border-radius:10px;
+      box-shadow:0 4px 10px rgba(0,0,0,.1);
+      max-width: 900px;
+    }
+    h2{
+      margin-top:0;
+      color:#333;
+    }
+    .demo-box{
+      width:120px;
+      height:60px;
+      background:#3498db;
+      color:white;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      border-radius:8px;
+      margin:10px;
+    }
+
+    /* --- Position Demo --- */
+    /* Static */
+    .static-demo .demo-box{position:static;}
+    /* Relative */
+    .relative-demo .demo-box{
+      position:relative;
+      left:40px; top:10px;
+      background:#27ae60;
+    }
+    /* Absolute */
+    .abs-wrapper{
+      position:relative;
+      background:#ecf0f1;
+      height:150px;
+      margin:10px 0;
+      border:1px dashed #aaa;
+    }
+    .abs-wrapper .demo-box{
+      position:absolute;
+      bottom:10px; right:10px;
+      background:#e67e22;
+    }
+    /* Fixed */
+    .fixed-box{
+      position:fixed;
+      top:0; left:0;
+      width:100%;
+      height:50px;
+      background:#8e44ad;
+      color:#fff;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      z-index:999;
+    }
+    .spacer{height:300px;}
+    
+    /* --- Z-index Demo --- */
+    .z-container{
+      position:relative;
+      height:180px;
+      background:#f0f4ff;
+      border:1px dashed #ccc;
+    }
+    .z-box{
+      position:absolute;
+      width:120px; height:120px;
+      border-radius:10px;
+      color:white;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      font-weight:bold;
+    }
+    /* peletakan z-index: semakin besar nilainya, semakin di depan posisinya */
+    .z1{background:#e74c3c; left:40px; top:40px; z-index:1;}
+    .z5{background:#2980b9; left:70px; top:70px; z-index:5;}
+    .z10{background:#2ecc71; left:100px; top:20px; z-index:10;}
+
+    /* --- Hyperlink Demo --- */
+    a{margin:10px; font-weight:bold;}
+    /* link styles: */
+    a:link{color:#2980b9;}
+    a:visited{color:#8e44ad;}
+    a:hover{color:#c0392b; text-decoration:none;} /* hover sekaligus text decoration(menghilangkan underline) */
+    a:active{color:#27ae60;}
+    /* link as button */
+    a.btn-link{
+      background:#3498db; /* merubah background-color link menjadi seperti tombol */
+      color:white;
+      padding:8px 14px;
+      border-radius:6px;
+      text-decoration:none;
+    }
+    a.btn-link:hover{background:#29b948;} /* background-color berubah saat hover pada link button */
+  </style>
+</head>
+<body>
+
+<section id="position">
+  <h2>1. Position</h2>
+  <p><b>Static:</b> posisi default elemen, mengikuti alur dokumen.</p>
+  <div class="static-demo">
+    <div class="demo-box">Static</div>
+  </div>
+
+  <p><b>Relative:</b> elemen bisa digeser dari posisi normalnya menggunakan <code>top/left</code>.</p>
+  <div class="relative-demo">
+    <div class="demo-box">Relative</div>
+  </div>
+
+  <p><b>Absolute:</b> posisinya mengikuti parent yang <code>relative</code>. Jika tidak ada, mengacu ke dokumen.</p>
+  <div class="abs-wrapper">
+    <div class="demo-box">Absolute</div>
+  </div>
+
+  <p><b>Fixed:</b> menempel pada viewport, tidak ikut scroll. (Lihat bar ungu di atas)</p>
+  <div class="fixed-box">Fixed Navbar</div>
+  </section>
+<center>hanya untuk demonstrasi tambahan posisi fixed</center>
+<div class="spacer"></div>
+
+<section>
+  <h2>2. Z-index</h2>
+  <p>Semakin besar nilai <code>z-index</code>, semakin depan posisinya.</p>
+  <div class="z-container">
+    <div class="z-box z1">z:1</div>
+    <div class="z-box z5">z:5</div>
+    <div class="z-box z10">z:10</div>
+  </div>
+</section>
+
+<section>
+  <h2>3. Hyperlink</h2>
+  <p>Berbagai state link:</p>
+  <ul>
+    <li><b>a:link</b> → link normal (belum pernah dikunjungi)</li>
+    <li><b>a:visited</b> → link yang sudah dikunjungi</li>
+    <li><b>a:hover</b> → saat diarahkan kursor</li>
+    <li><b>a:active</b> → saat diklik (ditekan)</li>
+  </ul>
+  <p>Contoh (Status `Visited` bergantung pada riwayat browser Anda):</p>
+  <a href="#link-demo-1">Link Normal (a:link)</a>
+  <a href="https://google.com">Link Visited (a:visited)</a>
+  <a href="#link-demo-2">Hover Me (a:hover)</a>
+  <a href="#link-demo-3">Active (a:active)</a>
+
+  <p>Link juga bisa dibuat seperti tombol:</p>
+  <a href="#" class="btn-link">Tombol Link</a> </section>
+
+</body>
+</html>

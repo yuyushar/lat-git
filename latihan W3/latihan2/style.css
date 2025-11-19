@@ -1,0 +1,44 @@
+body{
+    padding: 0px;
+    margin: 0px;
+    background: #e1e1e1;
+}
+.header{
+    background: rgba(0,0,0,0.9);
+    padding: 6px 24px;
+    text-align: left;
+    color: white;
+    margin: 0px;
+    letter-spacing: 1px;
+    font: caption;
+    font-size: 24px;
+    text-transform: uppercase;
+}
+.video-container{
+    position: relative;
+    z-index: 0; /* z-index dirubah dari -1 jadi 0 agar bisa dipencet tombol playnya */
+    top: 0px;
+}
+.video-container iframe{
+    width: 100%;
+    height: 90vh;
+}
+.content{
+    padding: 0px 24px;
+    text-align: justify;
+    font-size: 20px;
+}
+/* menambahkan styling untuk class menu */
+.menu{
+    position: sticky; /* elemen akan 'lengket' di posisi tertentu saat discroll */
+    top: 0;           /* titik lengketnya di atas viewport (0px dari atas) */
+    background: cadetblue;
+    padding: 16px 0px;
+    z-index: 100; /* Atur z-indexnya agar tidak tertimpa class/tag lain*/
+}
+.menu a{
+    color: white;
+    text-decoration: none;
+    padding: 12px 24px;
+    font-size: 18px;
+}

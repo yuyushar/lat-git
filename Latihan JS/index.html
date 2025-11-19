@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript DOM</title>
+    <script>
+        var nama = "Andi";
+        console.log(nama);
+    </script>
+</head>
+<body>
+    <h1>Tutor</h1>
+    <p>Hello DOM!</p>
+    <div id="hasil"></div>
+    <script>
+        document.getElementById("hasil").innerHTML = "Halo, " + nama + "!";
+    </script>
+    <div id="1">
+        <p id="p1">P1</p>
+        <p id="p2">P2</p>
+    </div>
+    <script>
+        const paragraph1 = document.createElement("p");
+        const node = document.createTextNode(" - ini ditambahkan dengan createTextNode");
+        paragraph1.appendChild(node);
+        const elmeent = document.getElementById("1");
+        elmeent.appendChild(paragraph1);
+    </script>
+</body>
+</html>

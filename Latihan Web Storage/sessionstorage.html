@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Session Storage</title>
+</head>
+<body>
+    <h2>Session Storage Example</h2>
+    <input type="text" id="username" placeholder="Enter your name">
+    <input type="text" id="address" placeholder="Enter your address">
+    <button onclick="saveData()">Save to Session Storage</button>
+    <button onclick="displayData()">Display from Session Storage</button>
+    <p id="output"></p>
+    <script>
+        function saveData() {
+            const name = document.getElementById('username').value;
+            const address = document.getElementById('address').value;
+            sessionStorage.setItem('name', name);
+            sessionStorage.setItem('address', address);
+            alert('Data saved to Session Storage');
+        }
+
+        function displayData() {
+            const name = sessionStorage.getItem('name');
+            const address = sessionStorage.getItem('address');
+            document.getElementById('output').innerText = `Name: ${name}, Age: ${address}`;
+        }
+    </script>
+</body>
+</html>

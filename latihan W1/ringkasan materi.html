@@ -1,0 +1,65 @@
+<html>
+    <head>
+        <base href="."> <!-- base URL untuk semua link relatif -->
+        <meta charset="UTF-8"> <!-- meta tag untuk mengatur karakter encoding -->
+        <meta name="keywords" content="HTML"> <!-- meta tag untuk kata kunci pencarian -->
+        <meta name="description" content="Ringkasan materi tentang desain web menggunakan HTML."> <!-- meta tag untuk deskripsi halaman -->
+        <meta name="author" content="Yuyus"> <!-- meta tag untuk penulis halaman -->
+        <meta http-equiv="refresh" content="30"> <!-- meta tag untuk menyegarkan halaman setiap 30 detik -->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- meta tag untuk responsif -->
+        <title>Desain Web</title> <!-- judul halaman web -->
+        <link rel="icon" type="image/x-icon" href="IMG SRC/scene.png"> <!-- contoh link namun untuk mengganti icon, bukan css -->
+        <style> /* CSS untuk mengatur gaya halaman */
+            body {
+                font-family: Arial, sans-serif; /* mengatur jenis font */
+                margin: 20px; /* mengatur margin halaman */
+                background-color: #f4f4f4; /* mengatur warna latar belakang */
+            }
+        </style>
+        <script>
+            console.log("Halaman dimuat"); // contoh script untuk menampilkan pesan di konsol
+            function showAlert() {
+                alert("Selamat datang di halaman desain web!"); // contoh fungsi untuk menampilkan alert
+            }
+        </script>
+    </head>
+    <body bgcolor="FFFFFF" text="000000" link="0000FF" vlink="FF00FF" alink="00FF00" 
+     onresize="alert('Jendela diubah ukurannya!')" onload="console.log('Halaman dimuat!')"> <!-- atribut untuk mengatur warna dan event -->
+        <a id="awal"></a> <!-- anchor untuk menandai awal halaman -->
+        <h1>Ringkasan Materi Desain Web</h1> <!-- judul utama halaman -->
+        <p>Desain web adalah proses perencanaan dan pembuatan situs web. 
+            <br>
+            Ini mencakup tata letak, konten, dan elemen visual lainnya untuk 
+            menciptakan pengalaman pengguna yang menarik dan fungsional.</p> <!-- paragraf deskripsi -->
+        <br> <!-- Mengganti baris baru bisa diselipkan di elemen paragraf <p> <br> </p> -->
+        <a href="http://google.com">google</a> Jika dipencet akan mengarah ke web google <!-- link ke google --> <br>
+        <a href="ftp://ftp.example.com">ftp</a> Jika dipencet akan mengarah ke link FTP <!-- link ke ftp --> <br>
+        <a href="mailto:yahyaaldi794@gmail.com">email</a> Jika dipencet akan mengarah ke link Mail <!-- link ke email --> <br>
+        <a href="gopher://...">gopher server</a> Jika dipencet akan mengarah ke Gopher Server<!-- link ke gopher server --> <br>
+        <a href="news:...">Newsgroup</a> Jika dipencet akan mengarah ke Newsgroup <!-- link ke newsgroup --> <br>
+        <a href="ringkasan materi.html#Gtw">Gtw</a> Jika dipencet akan mengarah ke id #Gtw yang ada pada html<!-- link untuk menuju ke id ... -->
+        <br><br>
+        <a href="http://google.com" target="_blank">google</a> Jika dipencet akan mengarah ke google namun di tag baru<!-- link ke google di tab baru --> <br>
+        <a href="http://google.com" target="_parent">google</a> Jika dipencet akan mengarah ke google namun di parent frame <!-- link ke google di parent frame --> <br>
+        <a href="http://google.com" target="_top">google</a> Jika dipencet akan mengarah ke google namun di top frame <!-- link ke google di top frame --> <br>
+        <a href="http://google.com" target="_self">google</a> Jika dipencet akan mengarah ke google namun di frame yang sama <!-- link ke google di frame yang sama -->
+        <br><br>
+        <a href="ringkasan materi.html#awal">Awal</a> Jika dipencet akan mengarah ke name=awal yang ada pada html (sebenarnya mirip seperti id="") <!-- link untuk kembali ke awal halaman -->
+        <br><p>Contoh Iframe</p> <br>
+        <iframe src="https://www.youtube.com/embed/dXBohfjc4WA" frameborder="0" width="50%"></iframe>
+        <h2 id="Gtw">Contoh Menu</h2> <!-- subjudul dengan id untuk link -->
+        <ol type="circle"> <!-- daftar dengan tipe lingkaran -->
+            <li><strong>HTML (HyperText Markup Language):</strong> Bahasa standar untuk membuat halaman web.</li>
+            <li>list dengan tipe lingkaran
+                <ul type="square"> <!-- daftar tak berurutan dengan tipe kotak -->
+                    <li><strong>Elemen Dasar HTML:</strong> Tag-tag dasar seperti &lt;html&gt;, &lt;head&gt;, &lt;body&gt;, &lt;h1&gt;-&lt;h6&gt;, &lt;p&gt;, &lt;a&gt;, &lt;img&gt;, dll.</li>
+                    <li><strong>Struktur Dokumen:</strong> Cara menyusun dokumen HTML dengan benar menggunakan tag-tag yang sesuai.</li>
+                </ul>
+            </li>
+        </ol>
+        <h2>Contoh Gambar</h2>
+        <img src="IMG SRC/scene.png" title="Scene Image" width="500" height="auto" alt="Gambar Pemandangan">
+        <p>Gambar di atas adalah contoh penggunaan tag &lt;img&gt; dalam HTML untuk menampilkan gambar pada halaman web.</p>
+
+    </body>
+</html>

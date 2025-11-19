@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Latihan 1 - Kalkulator Sederhana (eval)</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 80px;
+            background-color: #f5f5f5;
+        }
+        .calculator {
+            display: inline-block;
+            padding: 20px;
+            border-radius: 10px;
+            background: white;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+        input {
+            margin: 5px;
+            padding: 8px;
+            width: 120px;
+            text-align: center;
+            font-size: 16px;
+        }
+        button {
+            margin: 5px;
+            padding: 8px 15px;
+            cursor: pointer;
+            border: none;
+            border-radius: 5px;
+            background-color: #007bff;
+            color: white;
+            font-weight: bold;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        #hasil {
+            margin-top: 15px;
+            font-size: 20px;
+            font-weight: bold;
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <div class="calculator">
+        <h2>Kalkulator Sederhana (eval)</h2>
+        <input type="number" id="angka1" placeholder="Angka pertama">
+        <input type="number" id="angka2" placeholder="Angka kedua">
+        <br>
+        <button onclick="hitung('+')">+</button>
+        <button onclick="hitung('-')">−</button>
+        <button onclick="hitung('*')">×</button>
+        <button onclick="hitung('/')">÷</button>
+        <div id="hasil"></div>
+    </div>
+
+    <script>
+        function hitung(operator) {
+            let a = parseFloat(document.getElementById('angka1').value);
+            let b = parseFloat(document.getElementById('angka2').value);
+            if (isNaN(a) || isNaN(b)    ) {
+                document.getElementById('hasil').innerHTML = "Mohon masukkan angka!";
+                return;
+            }
+            let ekspresi = a + operator + b;
+
+            try {
+                let hasil = eval(ekspresi);
+                if (!isFinite(hasil)) {
+                    if (isNaN(hasil)) {
+                    document.getElementById('hasil').innerHTML = "Hasil tidak terdefinisi (NaN)";
+                    } else if (hasil === Infinity) {
+                        document.getElementById('hasil').innerHTML = "Tak hingga (Infinity)";
+                    } else if (hasil === -Infinity) {
+                        document.getElementById('hasil').innerHTML = "Tak hingga negatif (-Infinity)";
+                    }
+                } else {
+                    let output;
+                    if (Number.isInteger(hasil)) {
+                        output = hasil;
+                    }else if (Math.abs(hasil) < 0.01) {
+                        output = hasil.toPrecision(3);
+                    } else {
+                        output = hasil.toFixed(2);
+                    }
+                    document.getElementById('hasil').innerHTML = "Hasil: " + output;
+                }
+            } catch (error) {
+                document.getElementById('hasil').innerHTML = "Operasi tidak valid!";
+            }
+        }
+    </script>
+</body>
+</html>

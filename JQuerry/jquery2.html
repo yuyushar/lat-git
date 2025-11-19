@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accordion</title>
+    <link rel="stylesheet" href="jquery-ui-1.14.1/jquery-ui.min.css">
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script type="text/javascript" src="jquery-ui-1.14.1/jquery-ui.min.js"></script>
+</head>
+<body>
+    <div id="accordion">
+        <h3>Accordion 1</h3>
+        <div>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex ducimus vel, omnis cumque incidunt quam, repudiandae unde ad voluptates corrupti vero dolorem quo beatae quasi tempora quas voluptatibus, debitis animi?</p>
+        </div>
+        <h3>Accordion 2</h3>
+        <div>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex ducimus vel, omnis cumque incidunt quam, repudiandae unde ad voluptates corrupti vero dolorem quo beatae quasi tempora quas voluptatibus, debitis animi?</p>
+        </div>
+        <h3>Accordion 3</h3>
+        <div>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex ducimus vel, omnis cumque incidunt quam, repudiandae unde ad voluptates corrupti vero dolorem quo beatae quasi tempora quas voluptatibus, debitis animi?</p>
+        </div>
+    </div>
+
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $(function(){
+                $("#accordion").accordion();
+            });
+        });
+    </script>
+</body>
+</html>

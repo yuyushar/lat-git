@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JQuery</title>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script></script>
+</head>
+<body>
+    <center>
+        <h1 id="jam">Placeholder Jam</h1>
+        <br>
+        <button id="start">START/STOP</button>
+    </center>
+    <script>
+    $(document).ready(function() {
+        let timer = null;
+
+        function zero(n) {
+            return n < 10 ? "0" + n : n;
+        }
+
+        function updateClock() {
+            const hariIndo = [
+                "Minggu","Senin","Selasa","Rabu","Kamis","Jumat","Sabtu"
+            ];
+            const bulanIndo = [
+                "Januari","Februari","Maret","April","Mei","Juni",
+                "Juli","Agustus","September","Oktober","November","Desember"
+            ];
+
+            let now = new Date();
+
+            let hari = hariIndo[now.getDay()];
+            let tanggal = now.getDate();
+            let bulan = bulanIndo[now.getMonth()];
+            let tahun = now.getFullYear();
+
+            let jam = zero(now.getHours());
+            let menit = zero(now.getMinutes());
+            let detik = zero(now.getSeconds());
+            
+            $("#jam").html(
+                `${hari}, ${tanggal} ${bulan} ${tahun}<br>` +
+                `${jam}:${menit}:${detik}`
+            );
+        }
+
+        $("#start").click(function() {
+            if (timer === null) {
+                timer = setInterval(updateClock, 1000);
+            } else {
+                clearInterval(timer);
+                timer = null;
+            }
+        });
+
+    });
+    </script>
+</body>
+</html>
